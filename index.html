@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es-cl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Santo Tomás — Rancagua · Ingeniería en Informática</title>
+  <meta name="description" content="Página minimalista no oficial para destacar Ingeniería en Informática — Santo Tomás, sede Rancagua." />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Config Tailwind: color institucional (aprox Pantone 3425 C)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            st: {
+              DEFAULT: '#006341',   // Verde institucional aproximado
+              dark: '#004c32',
+              light: '#0a7c54',
+              tint: '#e9f5f0'       // Fondo muy suave
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root{
+      color-scheme: light;
+      --ring: 0 99 65;
+    }
+    .focus-ring:focus{
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(var(--ring), .25);
+    }
+    /* Micro-animación suave */
+    .fade-in{ animation: fade .5s ease both }
+    @keyframes fade{ from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}}
+  </style>
+</head>
+<body class="antialiased text-slate-800 selection:bg-st/10">
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#inicio" class="flex items-center gap-2">
+        <!-- Sello simple (no oficial) -->
+        <span class="inline-flex h-8 w-8 rounded-full bg-st items-center justify-center text-white font-bold">ST</span>
+        <span class="font-semibold tracking-tight">Santo Tomás · Rancagua</span>
+      </a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#carrera" class="hover:text-st">Carrera</a>
+        <a href="#perfil" class="hover:text-st">Perfil</a>
+        <a href="#malla" class="hover:text-st">Competencias</a>
+        <a href="#contacto" class="hover:text-st">Contacto</a>
+      </nav>
+      <button id="btnMenu" class="md:hidden inline-flex items-center gap-2 px-3 py-2 border rounded-lg border-slate-300 hover:border-st text-slate-700">
+        <span>Menú</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <div id="menuMovil" class="md:hidden hidden border-t border-slate-200">
+      <nav class="max-w-6xl mx-auto px-4 py-3 grid gap-2">
+        <a href="#carrera" class="py-2">Carrera</a>
+        <a href="#perfil" class="py-2">Perfil</a>
+        <a href="#malla" class="py-2">Competencias</a>
+        <a href="#contacto" class="py-2">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="bg-gradient-to-b from-st to-st-dark text-white">
+    <div class="max-w-6xl mx-auto px-4 py-20 md:py-28">
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight fade-in">
+        Ingeniería en Informática — Sede Rancagua
+      </h1>
+      <p class="mt-4 md:text-lg text-white/90 max-w-2xl fade-in" style="animation-delay:.08s">
+        Página minimalista (no oficial) creada por estudiante para presentar la carrera, su perfil y competencias en Santo Tomás Rancagua.
+      </p>
+      <div class="mt-8 flex flex-wrap gap-3 fade-in" style="animation-delay:.12s">
+        <a href="#carrera" class="focus-ring inline-flex px-5 py-3 rounded-xl bg-white text-st font-semibold hover:opacity-90">Ver carrera</a>
+        <a href="#contacto" class="focus-ring inline-flex px-5 py-3 rounded-xl border border-white/60 hover:bg-white/10">Contacto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrera -->
+  <section id="carrera" class="bg-st-tint">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-st">¿De qué trata?</h2>
+      <p class="mt-4 max-w-3xl text-slate-700">
+        La carrera de <strong>Ingeniería en Informática</strong> forma profesionales capaces de diseñar, desarrollar e integrar
+        soluciones de software y servicios digitales para organizaciones públicas y privadas, con énfasis en buenas prácticas,
+        seguridad, trabajo en equipo y vinculación con el medio.
+      </p>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-6">
+        <article class="p-6 bg-white rounded-2xl border border-slate-200">
+          <h3 class="font-semibold text-st">Desarrollo de Software</h3>
+          <p class="mt-2 text-slate-600">Frontend, backend, APIs REST, pruebas y despliegue continuo.</p>
+        </article>
+        <article class="p-6 bg-white rounded-2xl border border-slate-200">
+          <h3 class="font-semibold text-st">Infraestructura & Nube</h3>
+          <p class="mt-2 text-slate-600">Linux, contenedores, redes, servicios cloud y automatización.</p>
+        </article>
+        <article class="p-6 bg-white rounded-2xl border border-slate-200">
+          <h3 class="font-semibold text-st">Datos & IoT</h3>
+          <p class="mt-2 text-slate-600">Bases de datos, analítica, sensores/ESP32 y dashboards.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Perfil de Egreso -->
+  <section id="perfil" class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-st">Perfil de Egreso</h2>
+      <ul class="mt-6 grid md:grid-cols-2 gap-4 text-slate-700">
+        <li class="p-4 rounded-xl border border-slate-200">Aplica patrones, arquitectura y pruebas para soluciones escalables.</li>
+        <li class="p-4 rounded-xl border border-slate-200">Integra seguridad (auth, cifrado, cumplimiento y buenas prácticas).</li>
+        <li class="p-4 rounded-xl border border-slate-200">Gestiona proyectos con enfoque ágil y trabajo colaborativo.</li>
+        <li class="p-4 rounded-xl border border-slate-200">Se vincula con el medio y comprende necesidades del territorio.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Competencias/Malla (resumen) -->
+  <section id="malla" class="bg-st/5">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-st">Competencias Clave</h2>
+      <div class="mt-6 grid md:grid-cols-3 gap-6">
+        <div class="p-6 bg-white rounded-2xl border border-slate-200">
+          <h3 class="font-semibold text-slate-800">Programación & Web</h3>
+          <p class="mt-2 text-slate-600">HTML, CSS/Tailwind, JS/TS, React, Node.js, APIs, pruebas.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200">
+          <h3 class="font-semibold text-slate-800">Datos & Servicios</h3>
+          <p class="mt-2 text-slate-600">SQL/NoSQL, modelado, integración, mensajería (MQTT), ETL básico.</p>
+        </div>
+        <div class="p-6 bg-white rounded-2xl border border-slate-200">
+          <h3 class="font-semibold text-slate-800">DevOps & Nube</h3>
+          <p class="mt-2 text-slate-600">Linux, Nginx, contenedores, CI/CD, monitoreo y despliegue seguro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto (no formulario) -->
+  <section id="contacto" class="bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold text-st">Contacto / Sede</h2>
+      <p class="mt-4 text-slate-700">
+        Para información oficial de carreras y admisión, visita los sitios institucionales.
+      </p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a class="focus-ring inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-st text-white hover:bg-st-light"
+           href="https://www.ipsantotomas.cl/sedes/rancagua/" target="_blank" rel="noopener">IP Santo Tomás · Rancagua</a>
+        <a class="focus-ring inline-flex items-center gap-2 px-4 py-2 rounded-xl border border-st text-st hover:bg-st/10"
+           href="https://www.santotomas.cl/" target="_blank" rel="noopener">Santo Tomás · Sitio principal</a>
+      </div>
+      <p class="mt-3 text-xs text-slate-500">
+        *Este sitio es un demo personal de estudiante y <strong>no es oficial</strong>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 py-8 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-slate-600">© 2025 — Demo estudiantil (no oficial).</p>
+      <a href="#inicio" class="inline-flex items-center gap-2 text-st hover:underline">
+        Volver arriba
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 19V5m0 0l-7 7m7-7l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Menú móvil mínimo
+    const btn = document.getElementById('btnMenu');
+    const m = document.getElementById('menuMovil');
+    btn?.addEventListener('click', () => m.classList.toggle('hidden'));
+  </script>
+</body>
+</html>
